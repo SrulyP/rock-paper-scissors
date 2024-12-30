@@ -7,8 +7,20 @@
 </head>
 <body>
     <script>
-        console.log("hello!")
-
+        function getComputerChoice(){
+            let randomNum = Math.random()
+            randomNum = randomNum.toFixed(3) 
+            let computerChoice
+            if (randomNum <= 0.333) {
+                computerChoice = "Rock";
+            } else if (randomNum >= 0.666) {
+                computerChoice = "Scissors";
+            } else {
+                computerChoice = "Paper";
+            }
+            return computerChoice
+        };
+        
     </script>
 </body>
 </html>
