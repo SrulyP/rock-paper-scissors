@@ -7,10 +7,10 @@
 </head>
 <body>
     <script>
-        function getComputerChoice(){
-            let randomNum = Math.random()
-            randomNum = randomNum.toFixed(3) 
-            let computerChoice
+        function getComputerChoice() {
+            let randomNum = Math.random();
+            randomNum = randomNum.toFixed(3) ;
+            let computerChoice;
             if (randomNum <= 0.333) {
                 computerChoice = "Rock";
             } else if (randomNum >= 0.666) {
@@ -18,9 +18,19 @@
             } else {
                 computerChoice = "Paper";
             }
-            return computerChoice
+            return computerChoice;
         };
-        
+
+        function getHumanChoice() {
+            humanChoice = prompt("Please enter either rock, papers, or scissors: ");
+            humanChoice = humanChoice.toLowerCase();
+            if (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+                console.log("Please enter a valid choice!");
+                getHumanChoice();
+            }
+            return humanChoice;
+        }
+
     </script>
 </body>
 </html>
