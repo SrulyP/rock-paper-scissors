@@ -36,6 +36,10 @@ function getComputerSelection() {
 // Play one round
 function playRound(humanSelection, computerSelection) {
 
+    document.getElementById("humanChoiceP").innerText = `You chose: ${humanSelection}`;
+    document.getElementById("computerChoiceP").innerText = `Computer chose: ${computerSelection}`;
+
+
     // Ties
     if (humanSelection == "rock" && computerSelection == "rock") {
         console.log("It's a tie! You both chose rock!");
@@ -74,6 +78,7 @@ function playRound(humanSelection, computerSelection) {
         console.log("You lose this round, rock beats scissors!");
         computerScore += 1
     }
+    updateScoreDisplay();
 
     // Check if a player has reached 5 points, if yes reset the scores
     if (humanScore == 5) {
@@ -93,4 +98,14 @@ function playRound(humanSelection, computerSelection) {
 function resetScores(){
     humanScore = 0;
     computerScore = 0;
+    updateScoreDisplay();
+    document.getElementById("humanChoiceP").innerText = `Choose an element: `;
+    document.getElementById("computerChoiceP").innerText = ` `;
 }
+
+
+function updateScoreDisplay() {
+    document.getElementById('humanScore').textContent = humanScore;
+    document.getElementById('computerScore').textContent = computerScore;
+}
+

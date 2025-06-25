@@ -7,9 +7,28 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <h1>Welcome to Rock Paper Scissors</h1>
+    <div class="scores">
+        <div class="top row">
+            <p>Your Score: </p>
+            <p>Computer Score: </p>
+        </div>
+        <div class="bottom row">
+            <div id="humanScore">0</div>
+            <div id="computerScore">0</div>
+        </div>
+            <div class="chose">
+                <p id="humanChoiceP">Choose an element: </p>
+                <p id="computerChoiceP"></p>
+            </div>
+    </div>
+
+    <div class="choices">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+
     <script src="./app.js"></script>
 </body>
 </html>
