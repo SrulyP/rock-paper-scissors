@@ -42,40 +42,39 @@ function playRound(humanSelection, computerSelection) {
 
     // Ties
     if (humanSelection == "rock" && computerSelection == "rock") {
-        console.log("It's a tie! You both chose rock!");
-    }
+        document.getElementById("winner").innerText = `It's a tie! You both chose rock!`;    }
     else if (humanSelection == "paper" && computerSelection == "paper") {
-        console.log("It's a tie! You both chose paper!");
+        document.getElementById("winner").innerText = `It's a tie! You both chose paper!`;
     }
     else if (humanSelection == "scissors" && computerSelection == "scissors") {
-        console.log("It's a tie! You both chose scissors!");
+        document.getElementById("winner").innerText = `It's a tie! You both chose scissors!`;
     }
 
     // Human wins
     else if (humanSelection == "paper" && computerSelection == "rock") {
-        console.log("You win this round, paper beats rock!");
+        document.getElementById("winner").innerText = `You win this round, paper beats rock!`;
         humanScore += 1
     }
     else if (humanSelection == "scissors" && computerSelection == "paper") {
-        console.log("You win this round, scissors beats paper!");
+        document.getElementById("winner").innerText = `You win this round, scissors beats paper!`;
         humanScore += 1
     }
     else if (humanSelection == "rock" && computerSelection == "scissors") {
-        console.log("You win this round, rock beats scissors!");
+        document.getElementById("winner").innerText = `You win this round, rock beats scissors!`;
         humanScore += 1
     }
 
     // Computer wins
     else if (humanSelection == "rock" && computerSelection == "paper") {
-        console.log("You lose this round, paper beats rock!");
+        document.getElementById("winner").innerText = `You lose this round, paper beats rock!`;
         computerScore += 1
     }
     else if (humanSelection == "paper" && computerSelection == "scissors") {
-        console.log("You lose this round, scissors beats paper!");
+        document.getElementById("winner").innerText = `You lose this round, scissors beats paper!`;
         computerScore += 1
     }
     else if (humanSelection == "scissors" && computerSelection == "rock") {
-        console.log("You lose this round, rock beats scissors!");
+        document.getElementById("winner").innerText = `You lose this round, rock beats scissors!`;
         computerScore += 1
     }
     updateScoreDisplay();
@@ -83,12 +82,12 @@ function playRound(humanSelection, computerSelection) {
     // Check if a player has reached 5 points, if yes reset the scores
     if (humanScore == 5) {
         resetScores();
-        console.log("Game Over: You win! You won 5 games!");
+        document.getElementById("winner").innerText = `Game Over: You win! You won 5 rounds!`;
         return
 
     } else if (computerScore == 5) {
         resetScores();
-        console.log("Game Over: You lost! The computer won 5 games and beat you!");
+        document.getElementById("winner").innerText = `Game Over: You lost! The computer won 5 rounds and beat you!`;
         return
     }
 }
@@ -101,6 +100,8 @@ function resetScores(){
     updateScoreDisplay();
     document.getElementById("humanChoiceP").innerText = `Choose an element: `;
     document.getElementById("computerChoiceP").innerText = ` `;
+    document.getElementById("winner").innerText = ``;
+
 }
 
 
